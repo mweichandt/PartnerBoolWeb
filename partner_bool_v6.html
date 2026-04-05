@@ -1,0 +1,544 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #000000; --near-black: #1A1A1B; --yellow: #FFD200;
+  --grey: #666666; --light-grey: #F4F4F4; --white: #ffffff;
+  --font: 'Manrope', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); background: var(--white); color: var(--black); overflow-x: hidden; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 48px;
+  background: rgba(255,255,255,0.94); backdrop-filter: blur(14px);
+  border-bottom: 0.5px solid rgba(0,0,0,0.07);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0px;
+  text-decoration: none;
+}
+.nav-logo img { height: 38px; width: auto; display: block; object-fit: contain; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--grey); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--black); }
+.nav-cta {
+  background: var(--black) !important; color: var(--white) !important;
+  padding: 9px 20px; border-radius: 6px; font-weight: 700 !important;
+  font-size: 12px !important; letter-spacing: 0.01em; transition: opacity 0.2s !important;
+}
+.nav-cta:hover { opacity: 0.75 !important; }
+
+.hero {
+  min-height: 100vh; display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background: var(--black); overflow: hidden;
+  padding: 120px clamp(24px, 4vw, 72px) 80px;
+  position: relative;
+  gap: clamp(24px, 3vw, 56px);
+}
+.hero-glow {
+  position: absolute; pointer-events: none;
+  background: var(--yellow); border-radius: 50%; filter: blur(130px); opacity: 0.065;
+}
+.hero-content { position: relative; z-index: 2; }
+
+/* Hero image */
+.hero-image-col {
+  position: relative; z-index: 2;
+  display: flex; align-items: stretch;
+}
+.hero-image-frame {
+  position: relative; width: 100%;
+}
+.hero-image-frame::before {
+  content: '';
+  position: absolute;
+  top: -14px; right: -14px;
+  width: 55%; height: 55%;
+  border: 1.5px solid rgba(255,210,0,0.25);
+  border-radius: 16px;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-image-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 52%, rgba(0,0,0,0.72) 100%);
+  border-radius: 14px;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-image-frame img {
+  width: 100%;
+  height: clamp(400px, 65vh, 680px);
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 14px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  filter: grayscale(15%) brightness(0.88);
+}
+.hero-image-badge {
+  position: absolute;
+  bottom: 24px; left: 24px;
+  z-index: 3;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-image-badge-dot {
+  width: 8px; height: 8px;
+  background: var(--yellow); border-radius: 50%;
+  flex-shrink: 0;
+  animation: blink 2s ease-in-out infinite;
+}
+.hero-image-badge-text {
+  font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+}
+.hero-image-badge-text span {
+  display: block; font-size: 10px; font-weight: 400;
+  color: rgba(255,255,255,0.4); margin-top: 1px;
+  letter-spacing: 0.04em;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,210,0,0.09); border: 0.5px solid rgba(255,210,0,0.25);
+  color: var(--yellow); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 7px 16px; border-radius: 100px; margin-bottom: 36px;
+}
+.hero-dot { width: 6px; height: 6px; background: var(--yellow); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.35;transform:scale(0.6)} }
+.hero h1 {
+  font-size: clamp(36px, 4.2vw, 72px); font-weight: 800;
+  line-height: 0.97; letter-spacing: -0.035em;
+  color: var(--white); margin-bottom: 28px;
+}
+.hero h1 em { font-style: italic; color: var(--yellow); font-weight: 700; }
+.hero-sub {
+  font-size: clamp(14px, 1.2vw, 18px); line-height: 1.65; font-weight: 300;
+  color: rgba(255,255,255,0.48); max-width: 500px; margin-bottom: 48px;
+}
+.hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--yellow); color: var(--black);
+  padding: 15px 30px; border-radius: 6px;
+  font-size: 13px; font-weight: 700; font-family: var(--font);
+  text-decoration: none; border: none; cursor: pointer;
+  letter-spacing: 0.01em; transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,210,0,0.28); }
+.btn-ghost {
+  color: rgba(255,255,255,0.45); font-size: 14px; font-weight: 400;
+  text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+}
+.btn-ghost:hover { color: var(--white); }
+.hero-scroll {
+  position: absolute; bottom: 40px; left: 48px;
+  display: flex; align-items: center; gap: 12px;
+  color: rgba(255,255,255,0.18); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+}
+.scroll-line { width: 44px; height: 0.5px; background: rgba(255,255,255,0.18); }
+
+section { padding: 100px 48px; }
+.section-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--grey); margin-bottom: 18px;
+}
+
+.problem { background: var(--light-grey); }
+.problem-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.problem-left h2 {
+  font-size: clamp(28px, 3.2vw, 44px); font-weight: 800;
+  line-height: 1.06; letter-spacing: -0.03em; margin-bottom: 18px;
+}
+.problem-left p { font-size: 16px; line-height: 1.72; color: var(--grey); font-weight: 300; }
+.pain-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.pain-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 20px 22px; background: var(--white);
+  border-radius: 10px; border: 0.5px solid rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pain-item:hover { transform: translateX(4px); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.pain-icon {
+  width: 36px; height: 36px; background: var(--light-grey);
+  border-radius: 8px; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; font-size: 16px;
+}
+.pain-item strong { display: block; font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.pain-item span { font-size: 13px; color: var(--grey); line-height: 1.55; font-weight: 300; }
+
+.diferencial { background: var(--white); }
+.diferencial-inner { max-width: 1100px; margin: 0 auto; }
+.diferencial-header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: end; margin-bottom: 56px;
+}
+.diferencial-header h2 {
+  font-size: clamp(28px, 3.2vw, 44px); font-weight: 800;
+  line-height: 1.06; letter-spacing: -0.03em;
+}
+.diferencial-header p { font-size: 16px; line-height: 1.72; color: var(--grey); font-weight: 300; }
+.pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: #e4e4e4; border-radius: 14px; overflow: hidden; }
+.pillar { background: var(--white); padding: 40px 32px; transition: background 0.25s; cursor: default; }
+.pillar:hover { background: var(--black); }
+.pillar:hover .pillar-title { color: var(--yellow); }
+.pillar:hover .pillar-desc { color: rgba(255,255,255,0.48); }
+.pillar:hover .pillar-num { color: rgba(255,255,255,0.05); }
+.pillar-num {
+  font-size: 52px; font-weight: 800; color: rgba(0,0,0,0.05);
+  line-height: 1; margin-bottom: 20px; transition: color 0.25s; letter-spacing: -0.05em;
+}
+.pillar-icon {
+  width: 40px; height: 40px; background: var(--yellow); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 18px;
+}
+.pillar-title { font-size: 17px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; transition: color 0.25s; }
+.pillar-desc { font-size: 14px; line-height: 1.65; color: var(--grey); font-weight: 300; transition: color 0.25s; }
+
+.manifiesto { background: var(--black); text-align: center; }
+.manifiesto-inner { max-width: 780px; margin: 0 auto; }
+.manifiesto .section-label { color: rgba(255,210,0,0.4); }
+.quote-mark {
+  font-size: 100px; font-weight: 800; color: var(--yellow);
+  line-height: 0.5; display: block; margin-bottom: 30px; opacity: 0.3; letter-spacing: -0.06em;
+}
+.manifiesto blockquote {
+  font-size: clamp(20px, 2.8vw, 32px); font-weight: 500;
+  line-height: 1.4; color: var(--white); letter-spacing: -0.02em; margin-bottom: 36px;
+}
+.manifiesto blockquote em { color: var(--yellow); font-style: italic; font-weight: 600; }
+.manifiesto-sub {
+  font-size: 11px; color: rgba(255,255,255,0.22);
+  letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;
+}
+
+.equipo { background: var(--light-grey); }
+.equipo-inner { max-width: 1100px; margin: 0 auto; }
+.equipo-header { margin-bottom: 52px; }
+.equipo-header h2 {
+  font-size: clamp(28px, 3.2vw, 44px); font-weight: 800;
+  line-height: 1.06; letter-spacing: -0.03em; max-width: 480px;
+}
+.team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.team-card {
+  background: var(--white); border-radius: 14px; overflow: hidden;
+  border: 0.5px solid rgba(0,0,0,0.05);
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.team-card:hover { transform: translateY(-5px); box-shadow: 0 20px 48px rgba(0,0,0,0.09); }
+.team-avatar {
+  height: 260px; display: flex; align-items: center; justify-content: center;
+  font-size: 60px; font-weight: 800; letter-spacing: -0.05em; font-family: var(--font);
+  overflow: hidden; position: relative;
+}
+.team-avatar .av-initial { position: absolute; z-index: 1; font-size: 64px; font-weight: 800; }
+.team-avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  position: absolute; top: 0; left: 0; z-index: 2;
+  transition: transform 0.4s ease;
+}
+.team-card:hover .team-avatar img { transform: scale(1.04); }
+.team-avatar::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 3;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.15) 100%);
+  pointer-events: none;
+}
+.av-nat { background: var(--yellow); color: var(--black); }
+.av-gas { background: var(--near-black); color: var(--yellow); }
+.av-max { background: #2C3E50; color: var(--yellow); }
+.team-info { padding: 24px 26px; }
+.team-role {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--grey); margin-bottom: 6px;
+}
+.team-name { font-size: 21px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 10px; }
+.team-desc { font-size: 13px; line-height: 1.65; color: var(--grey); font-weight: 300; }
+.team-area {
+  margin-top: 16px; display: inline-flex; align-items: center; gap: 6px;
+  background: var(--light-grey); border-radius: 100px;
+  padding: 5px 12px; font-size: 12px; font-weight: 600; color: var(--grey);
+}
+
+.contacto { background: var(--black); }
+.contacto-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.contacto-left h2 {
+  font-size: clamp(32px, 4vw, 54px); font-weight: 800;
+  line-height: 1.0; color: var(--white); letter-spacing: -0.035em; margin-bottom: 20px;
+}
+.contacto-left h2 em { font-style: italic; color: var(--yellow); font-weight: 700; }
+.contacto-left p { font-size: 15px; line-height: 1.72; color: rgba(255,255,255,0.38); font-weight: 300; margin-bottom: 32px; }
+.slogan-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,210,0,0.08); border: 0.5px solid rgba(255,210,0,0.2);
+  color: var(--yellow); font-size: 11px; font-weight: 700;
+  padding: 9px 18px; border-radius: 100px; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.contact-form {
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.09);
+  border-radius: 14px; padding: 36px;
+}
+.form-row { margin-bottom: 16px; }
+.form-row label {
+  display: block; font-size: 10px; font-weight: 700;
+  color: rgba(255,255,255,0.3); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.form-row input, .form-row textarea {
+  width: 100%; background: rgba(255,255,255,0.05);
+  border: 0.5px solid rgba(255,255,255,0.1); border-radius: 6px;
+  padding: 12px 16px; font-size: 14px; color: var(--white);
+  font-family: var(--font); font-weight: 300; outline: none; resize: none;
+  transition: border-color 0.2s;
+}
+.form-row input:focus, .form-row textarea:focus { border-color: rgba(255,210,0,0.4); }
+.form-row input::placeholder, .form-row textarea::placeholder { color: rgba(255,255,255,0.16); }
+.form-submit {
+  width: 100%; background: var(--yellow); color: var(--black);
+  border: none; padding: 15px; border-radius: 6px;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  font-family: var(--font); letter-spacing: 0.01em;
+  transition: transform 0.15s, box-shadow 0.15s; margin-top: 4px;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,210,0,0.22); }
+
+footer {
+  background: var(--near-black); padding: 28px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 0.5px solid rgba(255,255,255,0.05);
+}
+.footer-logo { display: flex; align-items: center; gap: 0; }
+.footer-logo img { height: 32px; width: auto; object-fit: contain; opacity: 0.7; }
+.footer-slogan { font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  section { padding: 72px 20px; }
+  .hero { padding: 110px 20px 72px; grid-template-columns: 1fr; gap: 48px; }
+  .hero-image-col { display: none; }
+  .hero-scroll { left: 20px; }
+  .problem-inner, .diferencial-header, .contacto-inner { grid-template-columns: 1fr; gap: 48px; }
+  .pillars, .team-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+
+<!-- NAV — logo negro fondo blanco -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img
+      src="Partner_Bool_logo_negro.png"
+      alt="Partner Bool"
+      style="height:40px;width:auto;"
+      onerror="this.outerHTML='<span style=\'font-family:Manrope,sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.02em;color:#000\'>Partner Bool</span>'"
+    >
+  </a>
+  <ul class="nav-links">
+    <li><a href="#diferencial">Qué hacemos</a></li>
+    <li><a href="#equipo">El equipo</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#contacto" class="nav-cta">Hablar con nosotros →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-glow" style="width:700px;height:700px;top:-280px;right:-160px;"></div>
+  <div class="hero-glow" style="width:400px;height:400px;bottom:-140px;left:120px;"></div>
+  <div class="hero-content">
+    <div class="hero-tag"><div class="hero-dot"></div>100% Digital Management</div>
+    <h1>La administración<br>que actúa <em>antes</em><br>del problema.</h1>
+    <p class="hero-sub">Gestionamos tu consorcio con visión legal, técnica y comercial. Sin papeles. Sin demoras. Sin sorpresas.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">Conocé cómo trabajamos</a>
+      <a href="#diferencial" class="btn-ghost">Nuestro diferencial →</a>
+    </div>
+  </div>
+
+  <!-- Imagen derecha del hero -->
+  <div class="hero-image-col">
+    <div class="hero-image-frame">
+      <img
+        src="Atardecer.JPEG"
+        alt="Edificio administrado por Partner Bool"
+      >
+      <div class="hero-image-badge">
+        <div class="hero-image-badge-dot"></div>
+        <div class="hero-image-badge-text">
+          Gestión activa
+          <span>Anticipamos · Resolvemos · Transparencia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="problem" id="problema">
+  <div class="problem-inner">
+    <div class="problem-left">
+      <div class="section-label">El problema</div>
+      <h2>La administración tradicional trabaja con el fuego encendido.</h2>
+      <p style="margin-top:14px;">Las administradoras convencionales reaccionan cuando algo falla. Nosotros tomamos otro camino: anticipamos, planificamos y actuamos antes de que el problema aparezca.</p>
+    </div>
+    <ul class="pain-list">
+      <li class="pain-item"><div class="pain-icon">⏳</div><div><strong>Respuestas lentas</strong><span>Los reclamos tardan días —o semanas— en resolverse. Tu tiempo vale.</span></div></li>
+      <li class="pain-item"><div class="pain-icon">📄</div><div><strong>Sin transparencia</strong><span>No sabés en qué se gasta ni cómo se toman las decisiones que afectan tu propiedad.</span></div></li>
+      <li class="pain-item"><div class="pain-icon">🔧</div><div><strong>Gestión reactiva</strong><span>Se atiende lo urgente, no lo importante. El edificio se deteriora de a poco.</span></div></li>
+      <li class="pain-item"><div class="pain-icon">📵</div><div><strong>Sin acceso digital</strong><span>Documentos en papel, reuniones presenciales y comunicación imposible.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- DIFERENCIAL -->
+<section class="diferencial" id="diferencial">
+  <div class="diferencial-inner">
+    <div class="diferencial-header">
+      <div>
+        <div class="section-label">Nuestro diferencial</div>
+        <h2>Gestión integral.<br>Visión de futuro.</h2>
+      </div>
+      <p>Integramos la mirada legal, técnica y comercial para brindarte una gestión sólida, eficiente y diseñada para las exigencias de hoy.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-icon">⚡</div>
+        <div class="pillar-title">Anticipación</div>
+        <p class="pillar-desc">No esperamos a que algo se rompa para actuar. Identificamos y resolvemos situaciones antes de que se conviertan en problemas.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-icon">📱</div>
+        <div class="pillar-title">100% Digital</div>
+        <p class="pillar-desc">Gestión, reportes, comunicación y documentación totalmente digitales. Accedés a todo, desde cualquier lugar, en cualquier momento.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-icon">🔍</div>
+        <div class="pillar-title">Transparencia real</div>
+        <p class="pillar-desc">Cada decisión, cada gasto, cada acción tiene trazabilidad. Tu propiedad merece claridad total, no letra chica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFIESTO -->
+<section class="manifiesto">
+  <div class="manifiesto-inner">
+    <div class="section-label">Nuestro manifiesto</div>
+    <span class="quote-mark">"</span>
+    <blockquote>Queremos que vivas tu propiedad con total libertad, respaldado por un servicio ágil que te simplifica el día a día. Trabajamos para que habitar tu consorcio sea una experiencia <em>simple, ordenada y placentera.</em></blockquote>
+    <div class="manifiesto-sub">Gestión Integral · Transparencia Real · Tecnología Humana</div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="equipo" id="equipo">
+  <div class="equipo-inner">
+    <div class="equipo-header">
+      <div class="section-label">El equipo</div>
+      <h2>Tres miradas.<br>Una gestión completa.</h2>
+    </div>
+    <div class="team-grid">
+
+      <!-- FOTO NATALIA: reemplazá el src con la ruta local de tu imagen -->
+      <div class="team-card">
+        <div class="team-avatar av-nat">
+          <span class="av-initial">N</span>
+          <img src="Naty Dummy.jpg" alt="Natalia">
+        </div>
+        <div class="team-info">
+          <div class="team-role">Administración & Finanzas</div>
+          <div class="team-name">Natalia</div>
+          <p class="team-desc">Reseña profesional de Natalia — la completamos cuando nos mandés el texto.</p>
+          <span class="team-area">📊 Finanzas & Contabilidad</span>
+        </div>
+      </div>
+
+      <!-- FOTO GASTÓN: reemplazá el src con la ruta local de tu imagen -->
+      <div class="team-card">
+        <div class="team-avatar av-gas">
+          <span class="av-initial">G</span>
+          <img src="Gas Dummy.png" alt="Gastón">
+        </div>
+        <div class="team-info">
+          <div class="team-role">Operaciones & Proveedores</div>
+          <div class="team-name">Gastón</div>
+          <p class="team-desc">Reseña profesional de Gastón — la completamos cuando nos mandés el texto.</p>
+          <span class="team-area">🔧 Operaciones & Técnica</span>
+        </div>
+      </div>
+
+      <!-- FOTO MÁXIMO: reemplazá el src con la ruta local de tu imagen -->
+      <div class="team-card">
+        <div class="team-avatar av-max">
+          <span class="av-initial">M</span>
+          <img src="Max Dummy.jpg" alt="Máximo">
+        </div>
+        <div class="team-info">
+          <div class="team-role">Comercial & Marketing</div>
+          <div class="team-name">Máximo</div>
+          <p class="team-desc">Reseña profesional de Máximo — la completamos cuando nos mandés el texto.</p>
+          <span class="team-area">💼 Comercial & Estrategia</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="contacto-inner">
+    <div class="contacto-left">
+      <div class="section-label" style="color:rgba(255,210,0,0.4)">Contacto</div>
+      <h2>Elevamos el estándar<br>de <em>tu propiedad.</em></h2>
+      <p>Contanos sobre tu consorcio. Analizamos tu situación y te mostramos cómo podemos transformar la gestión desde el primer día.</p>
+      <div class="slogan-badge">◉ &nbsp;Partner Bool | 100% Digital Management</div>
+    </div>
+    <div class="contact-form">
+      <div class="form-row"><label>Nombre</label><input type="text" placeholder="Tu nombre completo"></div>
+      <div class="form-row"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
+      <div class="form-row"><label>Consorcio / Edificio</label><input type="text" placeholder="Nombre o dirección del consorcio"></div>
+      <div class="form-row"><label>Mensaje</label><textarea rows="3" placeholder="Contanos en qué podemos ayudarte..."></textarea></div>
+      <button class="form-submit">Quiero saber más →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER — logo blanco fondo negro -->
+<footer>
+  <div class="footer-logo">
+    <img
+      src="Partner_Bool_logo_blanco.png"
+      alt="Partner Bool"
+      style="height:34px;width:auto;opacity:0.65;"
+      onerror="this.outerHTML='<span style=\'font-family:Manrope,sans-serif;font-weight:800;font-size:14px;color:rgba(255,255,255,0.35);letter-spacing:-0.02em\'>Partner Bool</span>'"
+    >
+  </div>
+  <div class="footer-slogan">Tech-Driven Property Management</div>
+</footer>
