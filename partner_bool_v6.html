@@ -321,6 +321,29 @@ section { padding: 100px 48px; }
   transition: transform 0.15s, box-shadow 0.15s; margin-top: 4px;
 }
 .form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,210,0,0.22); }
+.form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+.form-success {
+  display: none; text-align: center; padding: 32px 24px;
+}
+.form-success.visible { display: block; }
+.form-success-icon {
+  width: 52px; height: 52px; background: var(--yellow); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px; font-size: 22px;
+}
+.form-success h3 {
+  font-size: 20px; font-weight: 800; color: var(--white);
+  letter-spacing: -0.02em; margin-bottom: 10px;
+}
+.form-success p {
+  font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 300; line-height: 1.6;
+}
+.form-error {
+  display: none; margin-top: 12px; padding: 12px 16px;
+  background: rgba(231,76,60,0.12); border: 0.5px solid rgba(231,76,60,0.3);
+  border-radius: 6px; font-size: 13px; color: #e74c3c; font-weight: 400;
+}
+.form-error.visible { display: block; }
 
 footer {
   background: var(--near-black); padding: 28px 48px;
@@ -348,7 +371,7 @@ footer {
 <nav>
   <a href="#" class="nav-logo">
     <img
-      src="Partner_Bool_logo_negro.png"
+      src="C:\Users\simpl\Google Drive\Partner Bool - Admin Consorcios\Marketing\01. Logos\Partner_Bool_logo_negro.png"
       alt="Partner Bool"
       style="height:40px;width:auto;"
       onerror="this.outerHTML='<span style=\'font-family:Manrope,sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.02em;color:#000\'>Partner Bool</span>'"
@@ -380,7 +403,7 @@ footer {
   <div class="hero-image-col">
     <div class="hero-image-frame">
       <img
-        src="Atardecer.JPEG"
+        src="C:\Users\simpl\Google Drive\Partner Bool - Admin Consorcios\Marketing\04. Banco Imagenes\Atardecer.JPEG"
         alt="Edificio administrado por Partner Bool"
       >
       <div class="hero-image-badge">
@@ -469,7 +492,7 @@ footer {
       <div class="team-card">
         <div class="team-avatar av-nat">
           <span class="av-initial">N</span>
-          <img src="Naty Dummy.jpg" alt="Natalia">
+          <img src="C:\Users\simpl\Google Drive\Partner Bool - Admin Consorcios\Marketing\04. Banco Imagenes\Naty Dummy.jpg" alt="Natalia">
         </div>
         <div class="team-info">
           <div class="team-role">Administración & Finanzas</div>
@@ -483,7 +506,7 @@ footer {
       <div class="team-card">
         <div class="team-avatar av-gas">
           <span class="av-initial">G</span>
-          <img src="Gas Dummy.png" alt="Gastón">
+          <img src="C:\Users\simpl\Google Drive\Partner Bool - Admin Consorcios\Marketing\04. Banco Imagenes\Gas Dummy.png" alt="Gastón">
         </div>
         <div class="team-info">
           <div class="team-role">Operaciones & Proveedores</div>
@@ -497,7 +520,7 @@ footer {
       <div class="team-card">
         <div class="team-avatar av-max">
           <span class="av-initial">M</span>
-          <img src="Max Dummy.jpg" alt="Máximo">
+          <img src="C:\Users\simpl\Google Drive\Partner Bool - Admin Consorcios\Marketing\04. Banco Imagenes\Max Dummy.jpg" alt="Máximo">
         </div>
         <div class="team-info">
           <div class="team-role">Comercial & Marketing</div>
@@ -521,11 +544,44 @@ footer {
       <div class="slogan-badge">◉ &nbsp;Partner Bool | 100% Digital Management</div>
     </div>
     <div class="contact-form">
-      <div class="form-row"><label>Nombre</label><input type="text" placeholder="Tu nombre completo"></div>
-      <div class="form-row"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
-      <div class="form-row"><label>Consorcio / Edificio</label><input type="text" placeholder="Nombre o dirección del consorcio"></div>
-      <div class="form-row"><label>Mensaje</label><textarea rows="3" placeholder="Contanos en qué podemos ayudarte..."></textarea></div>
-      <button class="form-submit">Quiero saber más →</button>
+
+      <!-- Formulario Formspree: reemplazá FORMSPREE_ENDPOINT con tu URL de formspree.io/f/xxxxxxxx -->
+      <form id="bool-form" action="https://formspree.io/f/mojpyypn" method="POST">
+
+        <div class="form-row">
+          <label>Nombre</label>
+          <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-row">
+          <label>Consorcio / Edificio</label>
+          <input type="text" name="consorcio" placeholder="Nombre o dirección del consorcio">
+        </div>
+        <div class="form-row">
+          <label>Mensaje</label>
+          <textarea name="mensaje" rows="3" placeholder="Contanos en qué podemos ayudarte..."></textarea>
+        </div>
+
+        <!-- Campo oculto: asunto del email que recibís -->
+        <input type="hidden" name="_subject" value="Nueva consulta desde Partner Bool">
+        <!-- Evita spam -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <button type="submit" class="form-submit" id="form-btn">Quiero saber más →</button>
+        <div class="form-error" id="form-error">Hubo un error al enviar. Por favor intentá de nuevo.</div>
+
+      </form>
+
+      <!-- Mensaje de éxito (se muestra al enviar) -->
+      <div class="form-success" id="form-success">
+        <div class="form-success-icon">✓</div>
+        <h3>¡Mensaje enviado!</h3>
+        <p>Nos ponemos en contacto con vos<br>a la brevedad. ¡Gracias!</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -534,7 +590,7 @@ footer {
 <footer>
   <div class="footer-logo">
     <img
-      src="Partner_Bool_logo_blanco.png"
+      src="C:\Users\simpl\Google Drive\Partner Bool - Admin Consorcios\Marketing\01. Logos\Partner_Bool_logo_blanco.png"
       alt="Partner Bool"
       style="height:34px;width:auto;opacity:0.65;"
       onerror="this.outerHTML='<span style=\'font-family:Manrope,sans-serif;font-weight:800;font-size:14px;color:rgba(255,255,255,0.35);letter-spacing:-0.02em\'>Partner Bool</span>'"
@@ -542,3 +598,47 @@ footer {
   </div>
   <div class="footer-slogan">Tech-Driven Property Management</div>
 </footer>
+
+<script>
+  const form = document.getElementById('bool-form');
+  const btn = document.getElementById('form-btn');
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Validate endpoint is set
+      const action = form.getAttribute('action');
+      if (!action || action === 'FORMSPREE_ENDPOINT') {
+        errorMsg.textContent = 'El formulario aún no está configurado. Agregá tu endpoint de Formspree.';
+        errorMsg.classList.add('visible');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+      errorMsg.classList.remove('visible');
+
+      try {
+        const response = await fetch(action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          successMsg.classList.add('visible');
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Quiero saber más →';
+        errorMsg.classList.add('visible');
+      }
+    });
+  }
+</script>
