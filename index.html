@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner Bool | Administración Digital de Consorcios</title>
+  <meta name="description" content="Gestión 100% digital para tu consorcio. Anticipamos problemas, brindamos transparencia total y operamos con tecnología de punta.">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <meta property="og:title" content="Partner Bool — Administración Digital de Consorcios">
+  <meta property="og:description" content="Gestión 100% digital. Sin papeles. Sin demoras. Sin sorpresas.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="assets/images/Partner_Bool_logo_negro.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="custom-cursor">
+    <div class="cursor-ring"></div>
+    <div class="cursor-dot"></div>
+  </div>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <span class="preloader-text">Partner Bool</span>
+      <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/images/Partner_Bool_logo_negro.png" alt="Partner Bool" class="nav-logo-dark"
+          onerror="this.outerHTML='<span class=\'nav-logo-fallback\'>Partner Bool</span>'">
+        <img src="assets/images/Partner_Bool_logo_blanco.png" alt="Partner Bool" class="nav-logo-light"
+          onerror="this.outerHTML='<span class=\'nav-logo-fallback nav-logo-fallback--light\'>Partner Bool</span>'">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#problema">El problema</a></li>
+        <li><a href="#diferencial">Qué hacemos</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <!-- Active section indicator -->
+        <span class="nav-indicator" id="nav-indicator"></span>
+      </ul>
+      <a href="#contacto" class="btn btn--nav">Hablar con nosotros</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu-links">
+      <li><a href="#problema">El problema</a></li>
+      <li><a href="#diferencial">Qué hacemos</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="mobile-menu-footer">
+      <span>100% Digital Management</span>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <img src="assets/images/Atardecer.JPEG" alt="" class="hero-bg-img" id="hero-bg-img">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-glow hero-glow--1"></div>
+      <div class="hero-glow hero-glow--2"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag" data-reveal="up">
+          <span class="pulse-dot"></span>
+          100% Digital Management
+        </div>
+        <h1 class="hero-title" id="hero-title">
+          La administración<br>que actúa <em>antes</em><br>del problema.
+        </h1>
+        <p class="hero-sub" data-reveal="up" data-reveal-delay="0.4">
+          Gestionamos tu consorcio con visión legal, técnica y comercial.<br>Sin papeles. Sin demoras. Sin sorpresas.
+        </p>
+        <div class="hero-actions" data-reveal="up" data-reveal-delay="0.6">
+          <a href="#contacto" class="btn btn--primary btn--magnetic">Conocé cómo trabajamos</a>
+          <a href="#diferencial" class="btn btn--ghost">Nuestro diferencial <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" data-reveal="up" data-reveal-delay="1">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-item">+50 Consorcios Gestionados</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">+1,200 Unidades Funcionales</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">98% Índice de Satisfacción</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">24/7 Atención Digital</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">100% Transparencia</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">+50 Consorcios Gestionados</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">+1,200 Unidades Funcionales</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">98% Índice de Satisfacción</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">24/7 Atención Digital</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">100% Transparencia</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">+50 Consorcios Gestionados</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">+1,200 Unidades Funcionales</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">98% Índice de Satisfacción</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">24/7 Atención Digital</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">100% Transparencia</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">+50 Consorcios Gestionados</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">+1,200 Unidades Funcionales</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">98% Índice de Satisfacción</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">24/7 Atención Digital</span><span class="marquee-sep">◆</span>
+      <span class="marquee-item">100% Transparencia</span><span class="marquee-sep">◆</span>
+    </div>
+  </div>
+
+  <!-- ============ PROBLEMA ============ -->
+  <section class="section section--warm" id="problema">
+    <div class="container">
+      <div class="split split--problem">
+        <div class="split-left" data-reveal="up">
+          <span class="section-label">El problema</span>
+          <h2 class="section-title">La administración tradicional<br>trabaja con el fuego <em>encendido.</em></h2>
+          <p class="section-desc">Las administradoras convencionales reaccionan cuando algo falla. Nosotros tomamos otro camino: anticipamos, planificamos y actuamos antes de que el problema aparezca.</p>
+        </div>
+        <div class="split-right">
+          <ul class="pain-list">
+            <li class="pain-card" data-reveal="up" data-reveal-delay="0.1">
+              <div class="pain-icon">⏳</div>
+              <div class="pain-body"><strong>Respuestas lentas</strong><span>Los reclamos tardan días —o semanas— en resolverse. Tu tiempo vale.</span></div>
+            </li>
+            <li class="pain-card" data-reveal="up" data-reveal-delay="0.2">
+              <div class="pain-icon">📄</div>
+              <div class="pain-body"><strong>Sin transparencia</strong><span>No sabés en qué se gasta ni cómo se toman las decisiones que afectan tu propiedad.</span></div>
+            </li>
+            <li class="pain-card" data-reveal="up" data-reveal-delay="0.3">
+              <div class="pain-icon">🔧</div>
+              <div class="pain-body"><strong>Gestión reactiva</strong><span>Se atiende lo urgente, no lo importante. El edificio se deteriora de a poco.</span></div>
+            </li>
+            <li class="pain-card" data-reveal="up" data-reveal-delay="0.4">
+              <div class="pain-icon">📵</div>
+              <div class="pain-body"><strong>Sin acceso digital</strong><span>Documentos en papel, reuniones presenciales y comunicación imposible.</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANTES VS DESPUÉS ============ -->
+  <section class="section section--white" id="comparativa">
+    <div class="container">
+      <div class="compare-header" data-reveal="up">
+        <span class="section-label">La diferencia</span>
+        <h2 class="section-title">Dos modelos.<br>Un solo <em>resultado.</em></h2>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-card compare-card--before" data-reveal="up" data-reveal-delay="0.1">
+          <h3>Administración tradicional</h3>
+          <ul class="compare-list">
+            <li class="compare-item"><span class="compare-icon">✕</span>Respuestas en días o semanas</li>
+            <li class="compare-item"><span class="compare-icon">✕</span>Documentación en papel</li>
+            <li class="compare-item"><span class="compare-icon">✕</span>Comunicación unidireccional</li>
+            <li class="compare-item"><span class="compare-icon">✕</span>Gastos sin trazabilidad</li>
+            <li class="compare-item"><span class="compare-icon">✕</span>Gestión reactiva: se actúa tarde</li>
+            <li class="compare-item"><span class="compare-icon">✕</span>Reuniones presenciales obligatorias</li>
+          </ul>
+        </div>
+        <div class="compare-divider" data-reveal="scale" data-reveal-delay="0.2">
+          <div class="compare-vs">VS</div>
+        </div>
+        <div class="compare-card compare-card--after" data-reveal="up" data-reveal-delay="0.3">
+          <h3>Partner Bool</h3>
+          <ul class="compare-list">
+            <li class="compare-item"><span class="compare-icon">✓</span>Respuesta en menos de 24hs</li>
+            <li class="compare-item"><span class="compare-icon">✓</span>Todo 100% digital y accesible</li>
+            <li class="compare-item"><span class="compare-icon">✓</span>Comunicación permanente y abierta</li>
+            <li class="compare-item"><span class="compare-icon">✓</span>Cada peso con trazabilidad total</li>
+            <li class="compare-item"><span class="compare-icon">✓</span>Gestión preventiva y anticipada</li>
+            <li class="compare-item"><span class="compare-icon">✓</span>Acceso remoto a todo, siempre</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIFERENCIAL ============ -->
+  <section class="section section--white" id="diferencial">
+    <div class="container">
+      <div class="split split--header" data-reveal="up">
+        <div>
+          <span class="section-label">Nuestro diferencial</span>
+          <h2 class="section-title">Gestión integral.<br>Visión de futuro.</h2>
+        </div>
+        <p class="section-desc">Integramos la mirada legal, técnica y comercial para brindarte una gestión sólida, eficiente y diseñada para las exigencias de hoy.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar" data-reveal="up" data-reveal-delay="0.1">
+          <span class="pillar-num">01</span>
+          <div class="pillar-icon">⚡</div>
+          <h3 class="pillar-title">Anticipación</h3>
+          <p class="pillar-desc">No esperamos a que algo se rompa para actuar. Identificamos y resolvemos situaciones antes de que se conviertan en problemas.</p>
+        </div>
+        <div class="pillar" data-reveal="up" data-reveal-delay="0.25">
+          <span class="pillar-num">02</span>
+          <div class="pillar-icon">📱</div>
+          <h3 class="pillar-title">100% Digital</h3>
+          <p class="pillar-desc">Gestión, reportes, comunicación y documentación totalmente digitales. Accedés a todo, desde cualquier lugar, en cualquier momento.</p>
+        </div>
+        <div class="pillar" data-reveal="up" data-reveal-delay="0.4">
+          <span class="pillar-num">03</span>
+          <div class="pillar-icon">🔍</div>
+          <h3 class="pillar-title">Transparencia real</h3>
+          <p class="pillar-desc">Cada decisión, cada gasto, cada acción tiene trazabilidad. Tu propiedad merece claridad total, no letra chica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLEED: white → dark -->
+  <div class="bleed bleed--white-to-dark"></div>
+
+  <!-- ============ PROCESO ============ -->
+  <section class="section section--dark" id="proceso">
+    <div class="container">
+      <div class="process-header" data-reveal="up">
+        <span class="section-label section-label--light">Cómo trabajamos</span>
+        <h2 class="section-title section-title--light">Del diagnóstico a la<br>gestión activa.</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step" data-reveal="up" data-reveal-delay="0.1">
+          <div class="step-number">01</div>
+          <div class="step-connector"></div>
+          <div class="step-content"><h3>Diagnóstico</h3><p>Evaluamos la situación actual de tu consorcio, identificando áreas de mejora y oportunidades de optimización.</p></div>
+        </div>
+        <div class="process-step" data-reveal="up" data-reveal-delay="0.2">
+          <div class="step-number">02</div>
+          <div class="step-connector"></div>
+          <div class="step-content"><h3>Propuesta</h3><p>Diseñamos un plan de gestión personalizado, adaptado a las necesidades específicas de tu edificio.</p></div>
+        </div>
+        <div class="process-step" data-reveal="up" data-reveal-delay="0.3">
+          <div class="step-number">03</div>
+          <div class="step-connector"></div>
+          <div class="step-content"><h3>Transición</h3><p>Realizamos una migración ordenada, sin interrupciones, asegurando continuidad en todos los procesos.</p></div>
+        </div>
+        <div class="process-step" data-reveal="up" data-reveal-delay="0.4">
+          <div class="step-number">04</div>
+          <div class="step-connector"></div>
+          <div class="step-content"><h3>Gestión activa</h3><p>Administración continua con monitoreo preventivo, reportes digitales y comunicación permanente.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MANIFIESTO — with parallax background ============ -->
+  <section class="section manifiesto">
+    <div class="manifiesto-bg">
+      <img src="assets/images/Atardecer.JPEG" alt="" id="manifiesto-bg-img">
+      <div class="manifiesto-bg-overlay"></div>
+    </div>
+    <div class="container manifiesto-inner" data-reveal="up">
+      <span class="section-label section-label--yellow">Nuestro manifiesto</span>
+      <span class="quote-mark">"</span>
+      <blockquote>
+        Queremos que vivas tu propiedad con total libertad, respaldado por un servicio ágil que te simplifica el día a día. Trabajamos para que habitar tu consorcio sea una experiencia <em>simple, ordenada y placentera.</em>
+      </blockquote>
+      <div class="manifiesto-sub">Gestión Integral · Transparencia Real · Tecnología Humana</div>
+    </div>
+  </section>
+
+  <!-- BLEED: black → warm -->
+  <div class="bleed bleed--dark-to-warm"></div>
+
+  <!-- ============ STATS ============ -->
+  <section class="section section--warm stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card" data-reveal="up" data-reveal-delay="0.05">
+          <span class="stat-number" data-count="50">0</span><span class="stat-prefix">+</span>
+          <span class="stat-label">Consorcios gestionados</span>
+        </div>
+        <div class="stat-card" data-reveal="up" data-reveal-delay="0.15">
+          <span class="stat-number" data-count="1200">0</span><span class="stat-prefix">+</span>
+          <span class="stat-label">Unidades funcionales</span>
+        </div>
+        <div class="stat-card" data-reveal="up" data-reveal-delay="0.25">
+          <span class="stat-number" data-count="98">0</span><span class="stat-prefix">%</span>
+          <span class="stat-label">Índice de satisfacción</span>
+        </div>
+        <div class="stat-card" data-reveal="up" data-reveal-delay="0.35">
+          <span class="stat-number" data-count="24">0</span><span class="stat-prefix">/7</span>
+          <span class="stat-label">Atención digital</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS — CAROUSEL ============ -->
+  <section class="section section--white" id="testimonios">
+    <div class="container">
+      <div class="testimonios-header" data-reveal="up">
+        <span class="section-label">Lo que dicen de nosotros</span>
+        <h2 class="section-title">La confianza se construye<br>con <em>resultados.</em></h2>
+      </div>
+      <div class="carousel" id="testimonial-carousel">
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="testimonio-card" data-reveal="up" data-reveal-delay="0.1">
+              <div class="testimonio-stars">★★★★★</div>
+              <p class="testimonio-text">"Desde que Partner Bool tomó la administración, la comunicación con los vecinos mejoró enormemente. Todo es más transparente y organizado."</p>
+              <div class="testimonio-author"><div class="testimonio-avatar">MG</div><div><strong>María González</strong><span>Consorcio Palermo Heights</span></div></div>
+            </div>
+            <div class="testimonio-card" data-reveal="up" data-reveal-delay="0.2">
+              <div class="testimonio-stars">★★★★★</div>
+              <p class="testimonio-text">"La diferencia fue inmediata. Pasamos de no tener información a tener todo digitalizado y accesible en cualquier momento."</p>
+              <div class="testimonio-author"><div class="testimonio-avatar">CM</div><div><strong>Carlos Mendoza</strong><span>Edificio San Martín 450</span></div></div>
+            </div>
+            <div class="testimonio-card" data-reveal="up" data-reveal-delay="0.3">
+              <div class="testimonio-stars">★★★★★</div>
+              <p class="testimonio-text">"Lo que más valoro es la anticipación. Antes esperábamos a que algo se rompa; ahora se resuelve antes de que sea un problema."</p>
+              <div class="testimonio-author"><div class="testimonio-avatar">LF</div><div><strong>Laura Fernández</strong><span>Torres del Parque</span></div></div>
+            </div>
+            <div class="testimonio-card">
+              <div class="testimonio-stars">★★★★★</div>
+              <p class="testimonio-text">"Partner Bool nos trajo orden. Ahora cada propietario puede ver las expensas, los gastos y las actas desde su celular. Es otra experiencia."</p>
+              <div class="testimonio-author"><div class="testimonio-avatar">RA</div><div><strong>Roberto Álvarez</strong><span>Complejo Rivadavia</span></div></div>
+            </div>
+            <div class="testimonio-card">
+              <div class="testimonio-stars">★★★★★</div>
+              <p class="testimonio-text">"El cambio fue notable desde el primer mes. Mejor comunicación, proveedores controlados y cero sorpresas en las expensas."</p>
+              <div class="testimonio-author"><div class="testimonio-avatar">AR</div><div><strong>Ana Ruiz</strong><span>Edificio Libertador 1200</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-arrow carousel-arrow--prev" aria-label="Anterior">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="carousel-dots">
+            <button class="carousel-dot is-active" aria-label="Página 1"></button>
+            <button class="carousel-dot" aria-label="Página 2"></button>
+            <button class="carousel-dot" aria-label="Página 3"></button>
+          </div>
+          <button class="carousel-arrow carousel-arrow--next" aria-label="Siguiente">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EQUIPO ============ -->
+  <section class="section section--warm" id="equipo">
+    <div class="container">
+      <div class="equipo-header" data-reveal="up">
+        <span class="section-label">El equipo</span>
+        <h2 class="section-title">Tres miradas.<br>Una gestión <em>completa.</em></h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card" data-reveal="up" data-reveal-delay="0.1">
+          <div class="team-avatar av-nat"><span class="av-initial">N</span><img src="assets/images/Naty Dummy.jpg" alt="Natalia" loading="lazy"></div>
+          <div class="team-info"><span class="team-role">Administración & Finanzas</span><h3 class="team-name">Natalia</h3><p class="team-desc">Reseña profesional de Natalia — la completamos cuando nos mandés el texto.</p><span class="team-area">📊 Finanzas & Contabilidad</span></div>
+        </div>
+        <div class="team-card" data-reveal="up" data-reveal-delay="0.2">
+          <div class="team-avatar av-gas"><span class="av-initial">G</span><img src="assets/images/Gas Dummy.png" alt="Gastón" loading="lazy"></div>
+          <div class="team-info"><span class="team-role">Operaciones & Proveedores</span><h3 class="team-name">Gastón</h3><p class="team-desc">Reseña profesional de Gastón — la completamos cuando nos mandés el texto.</p><span class="team-area">🔧 Operaciones & Técnica</span></div>
+        </div>
+        <div class="team-card" data-reveal="up" data-reveal-delay="0.3">
+          <div class="team-avatar av-max"><span class="av-initial">M</span><img src="assets/images/Max Dummy.jpg" alt="Máximo" loading="lazy"></div>
+          <div class="team-info"><span class="team-role">Comercial & Marketing</span><h3 class="team-name">Máximo</h3><p class="team-desc">Reseña profesional de Máximo — la completamos cuando nos mandés el texto.</p><span class="team-area">💼 Comercial & Estrategia</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section--white" id="faq">
+    <div class="container faq-container">
+      <div class="faq-header" data-reveal="up">
+        <span class="section-label">Preguntas frecuentes</span>
+        <h2 class="section-title">Todo lo que necesitás<br>saber.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item" data-reveal="up" data-reveal-delay="0.05">
+          <button class="faq-question" aria-expanded="false"><span>¿Cómo es la transición desde otra administradora?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="faq-answer"><p>Nos encargamos de todo el proceso. Coordinamos con la administración saliente, migramos la documentación y aseguramos continuidad en cada servicio. El proceso suele tomar entre 30 y 45 días.</p></div>
+        </div>
+        <div class="faq-item" data-reveal="up" data-reveal-delay="0.1">
+          <button class="faq-question" aria-expanded="false"><span>¿Qué herramientas digitales utilizan?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="faq-answer"><p>Trabajamos con plataformas propias y de terceros para gestión de expensas, comunicación con propietarios, seguimiento de reclamos, documentación digital y reportes en tiempo real.</p></div>
+        </div>
+        <div class="faq-item" data-reveal="up" data-reveal-delay="0.15">
+          <button class="faq-question" aria-expanded="false"><span>¿Cómo manejan las urgencias fuera de horario?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="faq-answer"><p>Contamos con un sistema de atención 24/7 para emergencias. Los propietarios pueden reportar urgencias a través de nuestra plataforma digital y recibir respuesta inmediata.</p></div>
+        </div>
+        <div class="faq-item" data-reveal="up" data-reveal-delay="0.2">
+          <button class="faq-question" aria-expanded="false"><span>¿Qué tipo de consorcios administran?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="faq-answer"><p>Trabajamos con consorcios residenciales de todos los tamaños, desde edificios de 10 unidades hasta complejos de más de 200. También gestionamos edificios mixtos (residencial y comercial).</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLEED: white → black -->
+  <div class="bleed bleed--white-to-black"></div>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="section section--black" id="contacto">
+    <div class="container">
+      <div class="split split--contact">
+        <div class="contact-left" data-reveal="up">
+          <span class="section-label section-label--yellow">Contacto</span>
+          <h2 class="section-title section-title--light">Elevamos el estándar<br>de <em>tu propiedad.</em></h2>
+          <p class="contact-desc">Contanos sobre tu consorcio. Analizamos tu situación y te mostramos cómo podemos transformar la gestión desde el primer día.</p>
+          <div class="contact-badge"><span class="pulse-dot"></span>Partner Bool | 100% Digital Management</div>
+        </div>
+        <div class="contact-right" data-reveal="up" data-reveal-delay="0.2">
+          <div class="contact-form-wrap">
+            <form id="bool-form" action="https://formspree.io/f/mojpyypn" method="POST">
+              <div class="form-row"><label for="f-nombre">Nombre</label><input id="f-nombre" type="text" name="nombre" placeholder="Tu nombre completo" required></div>
+              <div class="form-row"><label for="f-email">Email</label><input id="f-email" type="email" name="email" placeholder="tu@email.com" required></div>
+              <div class="form-row"><label for="f-consorcio">Consorcio / Edificio</label><input id="f-consorcio" type="text" name="consorcio" placeholder="Nombre o dirección del consorcio"></div>
+              <div class="form-row"><label for="f-mensaje">Mensaje</label><textarea id="f-mensaje" name="mensaje" rows="3" placeholder="Contanos en qué podemos ayudarte..."></textarea></div>
+              <input type="hidden" name="_subject" value="Nueva consulta desde Partner Bool">
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+              <button type="submit" class="btn btn--submit" id="form-btn">Quiero saber más →</button>
+              <div class="form-error" id="form-error">Hubo un error al enviar. Por favor intentá de nuevo.</div>
+            </form>
+            <div class="form-success" id="form-success">
+              <div class="form-success-icon">✓</div>
+              <h3>¡Mensaje enviado!</h3>
+              <p>Nos ponemos en contacto con vos<br>a la brevedad. ¡Gracias!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="assets/images/Partner_Bool_logo_blanco.png" alt="Partner Bool" class="footer-logo-img"
+          onerror="this.outerHTML='<span class=\'nav-logo-fallback nav-logo-fallback--light\'>Partner Bool</span>'">
+        <p class="footer-tagline">Tech-Driven Property Management</p>
+      </div>
+      <div class="footer-links">
+        <a href="#diferencial">Qué hacemos</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/partnerbool" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+        <a href="https://www.linkedin.com/company/partnerbool" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://wa.me/5491159725509" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+      <div class="footer-right"><span class="footer-copy">&copy; 2026 Partner Bool. Todos los derechos reservados.</span></div>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING ELEMENTS ============ -->
+  <a href="https://wa.me/5491159725509" target="_blank" rel="noopener" class="whatsapp-float" id="whatsapp-float" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.132 6.744 3.054 9.378L1.056 31.2l6.06-1.944a15.93 15.93 0 008.888 2.688C24.826 31.944 32 24.77 32 16.004 32 7.176 24.826 0 16.004 0zm9.35 22.606c-.396 1.116-2.328 2.076-3.21 2.19-.81.114-1.83.162-2.952-.186a27.09 27.09 0 01-2.67-1.002c-4.698-2.04-7.77-6.792-8.004-7.11-.234-.318-1.908-2.538-1.908-4.842s1.206-3.432 1.638-3.906c.432-.468 1.14-.702 1.518-.702.174 0 .33.006.474.012.432.018.648.042.936.726.36.852 1.236 3.012 1.344 3.228.108.216.18.474.036.762-.144.294-.216.474-.432.726-.216.252-.456.564-.648.756-.216.216-.444.456-.192.894.252.432 1.122 1.854 2.412 3.006 1.656 1.482 3.054 1.944 3.486 2.16.432.216.684.18.936-.108.252-.294 1.08-1.254 1.368-1.692.288-.432.576-.36.972-.216.396.144 2.514 1.188 2.946 1.404.432.216.72.324.828.504.108.174.108 1.02-.288 2.136z"/></svg>
+  </a>
+  <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M9 4L4 9M9 4L14 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
